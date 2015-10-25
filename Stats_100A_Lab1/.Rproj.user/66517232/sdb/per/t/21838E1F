@@ -1,0 +1,18 @@
+{
+    "contents" : "data = read.delim(\"Survey Data.txt\", header=TRUE, sep=\"\\t\")\ndim(data)\ndata[1:3,1:5]\nnames(data)\nattach(data)\nhead(data)\nstr(data$Q07_Age)\n\n#initial plot\nplot(data$Q07_Age)\ntitle(\"Survey Age Index\")\n\n#fix the plot\nplot(data$Q07_Age, ylim=c(0,250))\ntitle(\"Survey Age Index Zoomed View\")\n\n#Make a table\nsummary(data$Q07_Age)\n\n#Create mosaic plot\nAge_Spread=table(data$Q07_Age)\nmosaicplot(Age_Spread)\n\n# 2\nplot(data$Q02_Gender)\ntitle(\"Survey Gender Representation\")\n\nGender_Spread=table(data$Q02_Gender)\nmosaicplot(Gender_Spread)\nsummary(data$Q02_Gender)\n\n\n# 3\ntbl = xtabs(~Q22_gays.and.lesbians+Q16_Political.Orientation, data=warpbreaks)\nchisq.test(tbl)\nbarplot(tbl, legend=TRUE)\n# 4 stem and leaf plot\nstem(data$Q04_Hand.Span)\nstem(data$Q06_Height)\n#scatter plot\nplot(data$Q04_Hand.Span, data$Q06_Height)\ntitle(\"Hand Span and Height Scatter Plot\")\n\n\n#5\nboxplot(Q07_Age~Q21_Death.Penalty, ylim=c(15,28))\ntitle(\"Boxplots of Age and Death Penalty Variables\")\n",
+    "created" : 1445733190963.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1796965041",
+    "id" : "21838E1F",
+    "lastKnownWriteTime" : 1444601094,
+    "path" : "~/RStudio/Stats_100A_Lab1/main.R",
+    "project_path" : "main.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
